@@ -27,7 +27,8 @@ public class PetManager : MonoBehaviour
         }
     }
 
-    public static void Die(){
+    public void Die(){
         Debug.Log("dead");
     }
+
 }

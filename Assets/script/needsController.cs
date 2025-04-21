@@ -40,7 +40,8 @@ public class needsController:MonoBehaviour
             lastHunger = DateTime.Now;
         }
         if (hunger<0){
-            PetManager.Die();
+            PetManager.instance.Die();
+
         } else if (hunger>100){
             hunger =100;
         }
@@ -51,7 +52,8 @@ public class needsController:MonoBehaviour
             lastEnergy = DateTime.Now;
         }
         if (energy<0){
-            PetManager.Die();
+            PetManager.instance.Die();
+
         }else if (energy>100){
             energy =100;
         }
@@ -62,7 +64,8 @@ public class needsController:MonoBehaviour
             lastHappy = DateTime.Now;
         }
         if (happy<0){
-            PetManager.Die();
+            PetManager.instance.Die();
+
         }else if (happy>100){
             happy =100;
         }
@@ -73,7 +76,7 @@ public class needsController:MonoBehaviour
             lastClean = DateTime.Now;
         }
         if (clean<0){
-            PetManager.Die();
+            PetManager.instance.Die();
         }else if (clean>100){
             clean =100;
         }
