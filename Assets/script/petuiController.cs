@@ -3,7 +3,10 @@ using UnityEngine.UI;
 
 public class PetUIController : MonoBehaviour
 {
+    public Slider hungerSlider;
     public Slider energySlider;
+    public Slider happySlider;
+    public Slider cleanSlider;
     public static PetUIController instance;
 
     private void Awake()
@@ -17,7 +20,7 @@ public class PetUIController : MonoBehaviour
 
     public void setValue(int food, int happiness, int energy)
     {
-        energySlider.value = food;
+        hungerSlider.value = food;
         
     }
 }
