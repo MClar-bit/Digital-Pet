@@ -31,7 +31,7 @@ public class needsController:MonoBehaviour
             ChangeEnergy(-energyTick);
             ChangeHappy(-happyTick);
             ChangeClean(-cleanTick);
-            PetUIController.instance.setValue(hunger, energy, happy);
+            PetUIController.instance.setValue(hunger, energy, happy, clean);
         }
     }
 
