@@ -426,7 +426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -745, y: 328}
+  m_AnchoredPosition: {x: -596, y: 1563}
   m_SizeDelta: {x: 345, y: 370}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &864870817
@@ -451,11 +451,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 212
+    m_FontSize: 300
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 212
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 906711943}
   m_Layer: 0
   m_Name: Logic Manager
-  m_TagString: Untagged
+  m_TagString: Logic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -499,9 +499,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 906711942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b170eaefe27894837a8bcb8a51aae838, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ca6eb6dd6dc94ac4b361a9261c70a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScore: 0
+  scoreText: {fileID: 864870817}
+  gameOverScreen: {fileID: 0}
 --- !u!4 &906711944
 Transform:
   m_ObjectHideFlags: 0
@@ -546,8 +549,8 @@ Transform:
   m_GameObject: {fileID: 942340537}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.12, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0522, y: -0.0686, z: 0}
+  m_LocalScale: {x: 0.46018863, y: 0.46018863, z: 0.46018863}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -623,7 +626,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3803887304354961441, guid: 5dc987ee0a8f841da957f9eb18428652, type: 3}
+  m_Sprite: {fileID: -7469740316118452663, guid: e4c9e572088d74c7694cef24e68f4a3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -683,7 +686,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.04, y: -0.42}
-  m_Radius: 2.07
+  m_Radius: 3.16
 --- !u!1001 &1725144329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -698,7 +701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1733344173579110620, guid: 5ac71411f9c624d598dd08477b46c32e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.62
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 1733344173579110620, guid: 5ac71411f9c624d598dd08477b46c32e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -736,6 +739,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe
       objectReference: {fileID: 0}
+    - target: {fileID: 2591353776716429814, guid: 5ac71411f9c624d598dd08477b46c32e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -763,7 +770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pipe: {fileID: 2383299206189854441, guid: 5ac71411f9c624d598dd08477b46c32e, type: 3}
   spawnRate: 3
-  heightOffset: 10
+  heightOffset: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
