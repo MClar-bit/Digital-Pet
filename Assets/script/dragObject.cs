@@ -4,23 +4,38 @@ public class dragObject : MonoBehaviour
 {
   private bool dragging = false;
   private Vector3 offset;
+  private Vector3 currentVelocity;
+  public int sens = 20;
+
+    private Rigidbody2D rb;
 
   // Update is called once per frame
-  void Update() {
+    void Update() {
     if (dragging) {
-      // Move object, taking into account original offset.
-      transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPosition.z = 0f;
+
+            Vector3 newPos = mouseWorldPosition + offset;
+            currentVelocity = ((newPos - transform.position) / Time.deltaTime)/sens;
+
+            rb.MovePosition(newPos);
     }
   }
 
   private void OnMouseDown() {
-    // Record the difference between the objects centre, and the clicked point on the camera plane.
-    offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    dragging = true;
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Kinematic; // Disable physics simulation
+
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0f;
+        offset = transform.position - mouseWorldPosition;
+
+        dragging = true;
   }
 
   private void OnMouseUp() {
-    // Stop dragging.
-    dragging = false;
+        dragging = false;
+        rb.bodyType = RigidbodyType2D.Dynamic; // Re-enable physics
+        rb.linearVelocity = currentVelocity;         // Apply drag momentum
   }
 }

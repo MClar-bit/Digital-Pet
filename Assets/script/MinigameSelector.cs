@@ -9,7 +9,11 @@ public class Minigame : MonoBehaviour
         
     }
 
-    public void OpenGame(){
-        SceneManager.LoadScene(1);
+    public void OpenGame()
+    {
+        SceneManager.LoadScene(gameNum);
+        PlayerPrefs.SetInt("hunger", 10);
+        PlayerPrefs.SetInt("")
+
     }
 }
