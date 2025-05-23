@@ -1,16 +1,15 @@
 using UnityEngine;
 
+
+
+
 public class FoodSpawn : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject food;
+    public float offset = 10;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void spawnFood() {
+
+    Instantiate(food, new Vector3(transform.position.x, transform.position.y,  0), transform.rotation);
     }
 }

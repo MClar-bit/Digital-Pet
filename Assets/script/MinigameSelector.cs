@@ -11,9 +11,12 @@ public class Minigame : MonoBehaviour
 
     public void OpenGame()
     {
-        SceneManager.LoadScene(gameNum);
+        //save the scene
         PlayerPrefs.SetInt("hunger", 10);
-        PlayerPrefs.SetInt("")
+        PlayerPrefs.SetInt("clean", 10);
+
+        //open scene
+        SceneManager.LoadScene(gameNum);
 
     }
 }
